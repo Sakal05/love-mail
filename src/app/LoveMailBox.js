@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import LoveAnimation from './LoveAnimation';
+import FlowerShower from './FlowerShower';
 
 const StyledLoveMailBox = styled.div`
+  position: relative;
   background-color: #ffe6e6;
   padding: 40px;
   border-radius: 20px;
@@ -38,12 +40,15 @@ const LoveMailBox = () => {
   };
 
   return (
-    <StyledLoveMailBox onClick={handleClick}>
-      <IconContainer>
-        <LargeHeartIcon icon={faHeart} color="red" />
-      </IconContainer>
-      {isOpen ? <LoveAnimation /> : <ClickToOpenText>Click to open the love mail box</ClickToOpenText>}
-    </StyledLoveMailBox>
+    <>
+      <StyledLoveMailBox onClick={handleClick}>
+        <IconContainer>
+          <LargeHeartIcon icon={faHeart} color="red" />
+        </IconContainer>
+        {isOpen ? <LoveAnimation /> : <ClickToOpenText>Click to open the love mail box</ClickToOpenText>}
+      </StyledLoveMailBox>
+      <FlowerShower isOpen={isOpen} count={5} />
+    </>
   );
 };
 
