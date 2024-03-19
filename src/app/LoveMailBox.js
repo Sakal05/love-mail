@@ -9,7 +9,7 @@ const StyledLoveMailBox = styled.div`
   padding: 40px;
   border-radius: 20px;
   cursor: pointer;
-  max-width: 400px;
+  max-width: 550px;
   display: flex;
   align-items: center;
   justify-content: center;
